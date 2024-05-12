@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
 	title: "Evento App",
@@ -16,7 +15,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className="bg-gray-700 text-white w-10/12 flex flex-col mx-auto h-screen justify-between  ">
+				<Header />
+				{children}
+				<Footer />
+			</body>
 		</html>
 	);
 }
