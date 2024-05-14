@@ -7,9 +7,8 @@ import React from "react";
 
 function Header() {
 	const pathName = usePathname();
-	console.log(pathName);
 	return (
-		<header className="flex justify-between px-10 py-2 mb-3 border-b border-gray-500 ">
+		<header className="flex items-center justify-between border-b border-white/10 h-14 px-3 sm:px-9 ">
 			<p className="">Evento</p>
 			<section className="flex gap-5 ">
 				<Link
