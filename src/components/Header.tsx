@@ -41,17 +41,3 @@ function Header() {
 }
 
 export default Header;
-
-/* 
-
-		className={clsx(
-						"hover:underline underline-offset-[12px] decoration-4 decoration-yellow-500 ",
-					), {
-             "text-white" : pathName === "/events/all",
-						 "text-white/50" : pathName !== "/events/all"
-					}}
-
-						className={` ${
-						pathName === "/" ? "text-white" : "text-white/50"
-					} `}
-*/

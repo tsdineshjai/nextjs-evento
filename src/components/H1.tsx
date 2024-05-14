@@ -5,7 +5,7 @@ type ChildrenProps = {
 };
 
 function H1({ children }: ChildrenProps) {
-	return <h1 className="py-2 text-3xl font-mono">{children}</h1>;
+	return <h1 className="py-4 text-3xl font-mono">{children}</h1>;
 }
 
 export default H1;

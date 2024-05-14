@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* SCROLLBAR STYLING */
+/* Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7faf7;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(41, 7, 120, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(214, 214, 29);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3abb0f rgba(255, 255, 255, 0.1);
+}

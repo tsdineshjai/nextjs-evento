@@ -6,13 +6,13 @@ import Link from "next/link";
 
 function page() {
 	return (
-		<main className=" flex flex-col items-center px-3 pt-24">
+		<main className=" flex flex-col items-center px-3 pt-6">
 			<H1>Find Events around you</H1>
 
 			<h3 className="py-2 text-gray-300">
 				Browse more than{" "}
-				<i className="underline underline-offset-4  text-yellow-500">
-					10,000 events
+				<i className="underline underline-offset-4 text-yellow-500">
+					10,000 events{" "}
 				</i>
 				worldwide
 			</h3>
