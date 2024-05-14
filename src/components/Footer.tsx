@@ -8,10 +8,18 @@ function Footer() {
 			<p>&#169; FlashByte. ALl rights reserved</p>
 
 			<section>
-				<Link href={"/terms&conditions"} className="mr-2">
+				<Link
+					href={"/terms&conditions"}
+					className="mr-2 hover:underline hover:cursor-pointer "
+				>
 					Terms & Conditions
 				</Link>
-				<Link href={"/privacy-policy"}>Privacy Policy</Link>
+				<Link
+					href={"/privacy-policy"}
+					className="hover:underline hover:cursor-pointer"
+				>
+					Privacy Policy
+				</Link>
 			</section>
 		</main>
 	);
