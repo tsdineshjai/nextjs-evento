@@ -21,17 +21,18 @@ function PrimeEvent({ data }: PrimeEventProps) {
 	const dateObject = new Date(date);
 
 	return (
-		<main className="w-2/3  mx-auto flex flex-col items-center justify-center py-2 mt-[1rem]">
-			<div className="w-full grid place-items-center rounded-lg py-3 mb-3 bg-yellow-300 pt-[2rem] bg-gradient-to-r from-pink-900 to-purple-900">
-				<section className="flex justify-between w-2/3 mb-[2rem]">
+		<main className=" max-w-[800px]  mx-auto flex flex-col items-center justify-center py-2 mt-[1rem]">
+			<div className="w-full grid place-items-center md:gap-3 rounded-lg py-3 mb-3  bg-yellow-300 pt-[2rem] bg-gradient-to-r from-green-900 to-purple-900">
+				<section className=" flex flex-col md:flex-row  items-center justify-between w-2/3 mb-[2rem]">
 					<Image
 						src={imageUrl}
 						alt={name}
 						width={250}
 						height={250}
-						className="rounded-lg"
+						className="rounded-lg object-cover mb-2 mx-auto"
+						sizes="(max-width:1280px) 100vw, 1280px"
 					/>
-					<section className="flex flex-col justify-between">
+					<section className="ml-5 flex flex-col justify-around">
 						<div>
 							<p className="text-xs">
 								<span className="mr-1 text-white/85">

@@ -8,7 +8,7 @@ type eventsListProps = {
 
 function SingleEvent({ events }: eventsListProps) {
 	return (
-		<div className="px-[1.5rem] flex flex-wrap gap-6 justify-center">
+		<div className="px-[1.5rem] flex flex-wrap gap-6 justify-center h-fit">
 			{events.map((event) => (
 				<EventCard key={event.id} event={event} />
 			))}

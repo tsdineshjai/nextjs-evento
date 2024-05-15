@@ -18,7 +18,7 @@ async function Page({ params }: ParamsProps) {
 
 	const events: EventoEvent[] = await response.json();
 	return (
-		<main className=" flex flex-col items-center py-13 px-[1.5rem] min-h-[110vh]  ">
+		<main className=" flex flex-col items-center py-13 px-[1.5rem] min-h-[110vh] overflow-scroll  ">
 			<H1 className="pb-6 pt-4">
 				Events in {city === "all" ? "All Events" : capitalize(city)}
 			</H1>
