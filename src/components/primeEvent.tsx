@@ -32,7 +32,7 @@ function PrimeEvent({ data }: PrimeEventProps) {
 						className="rounded-lg object-cover mb-2 mx-auto"
 						sizes="(max-width:1280px) 100vw, 1280px"
 					/>
-					<section className="ml-5 flex flex-col justify-around">
+					<section className="ml-5 flex flex-col justify-around w-fit">
 						<div>
 							<p className="text-xs">
 								<span className="mr-1 text-white/85">
@@ -52,7 +52,7 @@ function PrimeEvent({ data }: PrimeEventProps) {
 									})}
 								</span>
 							</p>
-							<p className="text-3xl">{name}</p>
+							<p className="text-2xl">{name}</p>
 							<p className="italic font-light text-yellow-400">
 								Organized by {organizerName}
 							</p>
