@@ -1,4 +1,4 @@
-import { EventoEvent } from "@/lib/types";
+import { EventoEvent } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -21,9 +21,9 @@ function EventCard({ event }: EventCardProps) {
 	return (
 		<Link
 			href={`/event/${slug}`}
-			className="h-[387px] max-w-[500px]   flex-1 basis-80  "
+			className="h-[387px] max-w-[500px] basis-80"
 		>
-			<section className="mx-auto border-2 border-yellow-300 rounded-lg relative hover:scale-105 transition active:scale[1.02]">
+			<section className="rounded-lg -mb:[3rem] relative hover:scale-105 transition active:scale[1.02]">
 				<Image
 					src={imageUrl}
 					width={500}

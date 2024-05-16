@@ -1,4 +1,6 @@
 import PrimeEvent from "@/components/primeEvent";
+import prisma from "@/lib/db";
+import { EventoEvent } from "@prisma/client";
 
 type PageProps = {
 	params: {
@@ -9,14 +11,15 @@ type PageProps = {
 async function EventPage({ params }: PageProps) {
 	const { slug } = params;
 
-	const response = await fetch(
-		`https://bytegrad.com/course-assets/projects/evento/api/events/${slug}`
-	);
-	const data = await response.json();
+	const eventDetails: EventoEvent | null = await prisma.eventoEvent.findUnique({
+		where: {
+			slug: slug,
+		},
+	});
 
 	return (
 		<main>
-			<PrimeEvent key={data.id} data={data} />
+			<PrimeEvent key={eventDetails!.id} data={eventDetails!} />
 		</main>
 	);
 }
