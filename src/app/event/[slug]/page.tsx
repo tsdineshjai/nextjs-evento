@@ -1,6 +1,7 @@
 import PrimeEvent from "@/components/primeEvent";
 import prisma from "@/lib/db";
 import { EventoEvent } from "@prisma/client";
+import { unstable_cache } from "next/cache";
 import { notFound } from "next/navigation";
 
 type PageProps = {
@@ -12,14 +13,21 @@ type PageProps = {
 async function EventPage({ params }: PageProps) {
 	const { slug } = params;
 
-	const eventDetails: EventoEvent | null = await prisma.eventoEvent.findUnique({
-		where: {
-			slug: slug,
-		},
+	const singlEventFunctionCached = unstable_cache(async () => {
+		const eventDetails: EventoEvent | null =
+			await prisma.eventoEvent.findUnique({
+				where: {
+					slug: slug,
+				},
+			});
+
+		if (!eventDetails) {
+			return notFound();
+		}
+		return eventDetails;
 	});
-	if (!eventDetails) {
-		return notFound();
-	}
+
+	const eventDetails = await singlEventFunctionCached();
 
 	return (
 		<main>

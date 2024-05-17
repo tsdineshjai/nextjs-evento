@@ -19,10 +19,7 @@ function EventCard({ event }: EventCardProps) {
 		description,
 	} = event;
 	return (
-		<Link
-			href={`/event/${slug}`}
-			className="h-[387px] max-w-[500px] basis-80"
-		>
+		<Link href={`/event/${slug}`} className="h-[387px] max-w-[500px] basis-80">
 			<section className="rounded-lg -mb:[3rem] relative hover:scale-105 transition active:scale[1.02]">
 				<Image
 					src={imageUrl}
@@ -35,7 +32,7 @@ function EventCard({ event }: EventCardProps) {
 					<h2 className="text-2xl font-semibold">{name}</h2>
 					<p className="italic text-yellow-500/80 ">By {organizerName}</p>
 					<p className="text-xs text-white/30 mt-2 pb-2">
-						{location}, {city}
+						{location}, {city}	
 					</p>
 				</div>
 
