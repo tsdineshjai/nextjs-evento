@@ -1,6 +1,7 @@
 import PrimeEvent from "@/components/primeEvent";
 import prisma from "@/lib/db";
 import { EventoEvent } from "@prisma/client";
+import { notFound } from "next/navigation";
 
 type PageProps = {
 	params: {
@@ -16,10 +17,13 @@ async function EventPage({ params }: PageProps) {
 			slug: slug,
 		},
 	});
+	if (!eventDetails) {
+		return notFound();
+	}
 
 	return (
 		<main>
-			<PrimeEvent key={eventDetails!.id} data={eventDetails!} />
+			<PrimeEvent key={eventDetails.id} data={eventDetails} />
 		</main>
 	);
 }

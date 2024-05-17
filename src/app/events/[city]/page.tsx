@@ -8,19 +8,22 @@ type ParamsProps = {
 	params: {
 		city: string;
 	};
+	searchParams: {
+		[key: string]: string | string[] | undefined;
+	};
 };
 
-async function Page({ params }: ParamsProps) {
+async function Page({ params, searchParams }: ParamsProps) {
 	const city = params.city;
+	const page = searchParams.page ?? "1";
 
 	return (
 		<main className=" flex flex-col items-center py-13 px-[1.5rem] min-h-[110vh] overflow-scroll  ">
 			<H1 className="pb-6 pt-4">
 				Events in {city === "all" ? "All Events" : capitalize(city)}
 			</H1>
-
 			<Suspense fallback={<Loading />}>
-				<SingleEvent city={city} />
+				<SingleEvent city={city} page={+page} />
 			</Suspense>
 		</main>
 	);
